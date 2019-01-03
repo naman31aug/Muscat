@@ -1,0 +1,193 @@
+﻿<div class="dashboard-container">
+    <!-- Dashboard Sidebar
+    ================================================== -->
+    <div class="dashboard-sidebar">
+        <div class="dashboard-sidebar-inner" data-simplebar>
+            <div class="dashboard-nav-container">
+                <!-- Responsive Navigation Trigger -->
+                <a href="#/" class="dashboard-responsive-nav-trigger">
+                    <span class="hamburger hamburger--collapse">
+                        <span class="hamburger-box">
+                            <span class="hamburger-inner"></span>
+                        </span>
+                    </span>
+                    <span class="trigger-title">Dashboard Navigation</span>
+                </a>
+
+                <!-- Navigation -->
+                <div class="dashboard-nav">
+                    <div class="dashboard-nav-inner">
+                        <ul data-submenu-title="Start">
+                            <li><a href="#/"><i class="icon-material-outline-dashboard"></i> Dashboard</a></li>
+                            <li><a href="#/Message"><i class="icon-material-outline-question-answer"></i> Messages </a></li>
+                            
+                        </ul>
+
+                        <ul data-submenu-title="Organize and Manage">
+                            <li><a href="#/Post"><i class="icon-material-outline-dashboard"></i> Post A Job</a></li>
+                        </ul>
+                        <ul data-submenu-title="Account">
+                            <li><a href="#/Profile"><i class="icon-material-outline-settings"></i> Settings</a></li>
+                            <li><a href="#/login"><i class="icon-material-outline-power-settings-new"></i> Logout</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+                <!-- Navigation / End -->
+            </div>
+        </div>
+    </div>
+    <!-- Dashboard Sidebar / End -->
+    <!-- Dashboard Content
+    ================================================== -->
+    <div class="dashboard-content-container" data-simplebar>
+        <div class="dashboard-content-inner">
+
+            <!-- Dashboard Headline -->
+            <div class="dashboard-headline">
+                <h3>Post a Job</h3>
+                <!-- Breadcrumbs -->
+                <nav id="breadcrumbs" class="dark">
+                    <ul>
+                        <li><a href="#/">Home</a></li>                       
+                        <li>Post a Job</li>
+                        <li>{{displayThis}}</li>
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Row -->
+            <div class="row">
+                <form role="form" id="post-job-form">
+                    <!-- Dashboard Box -->
+                    <div class="col-xl-12">
+                        <div class="dashboard-box">
+
+                            <!-- Headline -->
+                            <div class="headline">
+                                <h3><i class="icon-feather-folder-plus"></i> Job Submission Form</h3>
+                            </div>
+
+                            <div class="content with-padding padding-bottom-10">
+                                <div class="row">
+
+                                    <div class="col-xl-4">
+                                        <div class="submit-field">
+                                            <h5>Job Title</h5>
+                                            <input type="text" class="input-text with-border" id="Title" name="Title" placeholder="Job Title" ng-model="JobPost.Title">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xl-4">
+                                        <div class="submit-field">
+                                            <h5>Job Type</h5>
+                                            <select class="input-text headline-border-top" id="ddlType" data-size="7" ng-model="JobPost.Type">                                             
+                                                <option value="Full Time">Full Time</option>
+                                                <option value="Freelance">Freelance</option>
+                                                <option value="Part Time">Part Time</option>
+                                                <option value="Internship">Internship</option>
+                                                <option value="Temporary">Temporary</option>                                                
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xl-4">
+                                        <div class="submit-field">
+                                            <h5>Job Category</h5>
+                                            <select class="input-text headline-border-top" data-size="7" id="ddlCategory" ng-model="JobPost.Category">
+                                                <option value="Accounting and Finance">Accounting and Finance</option>
+                                                <option value="Clerical & Data Entry">Clerical & Data Entry</option>
+                                                <option value="Counseling">Counseling</option>
+                                                <option value="Court Administration">Court Administration</option>
+                                                <option value="Human Resources">Human Resources</option>
+                                                <option value="Investigative">Investigative</option>
+                                                <option value="IT and Computers">IT and Computers</option>
+                                                <option value="Law Enforcement">Law Enforcement</option>
+                                                <option value="Management">Management</option>
+                                                <option value="Miscellaneous">Miscellaneous</option>
+                                                <option value="Public Relations">Public Relations</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xl-4">
+                                        <div class="submit-field">
+                                            <h5>Location</h5>
+                                            <div class="input-with-icon">
+                                                <div id="autocomplete-container">
+                                                    <input class="with-border" id="Location" type="text" placeholder="Address" ng-model="JobPost.Location">
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xl-4">
+                                        <div class="submit-field">
+                                            <h5>Minimum Salary</h5>
+                                            <div class="input-with-icon">
+                                                <input class="with-border" type="text" id="MinSalary" placeholder="Min" ng-model="JobPost.Min_Price">
+                                                <i class="currency">Rs.</i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-4">
+                                        <div class="submit-field">
+                                            <h5>Max Salary</h5>
+                                            <div class="input-with-icon">
+                                                <input class="with-border" type="text" id="MaxSalary" placeholder="Max" ng-model="JobPost.Max_Price">
+                                                <i class="currency">Rs.</i>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-xl-4">
+                                        <div class="submit-field">
+                                            <h5>Tags <span>(optional)</span> </h5>
+                                            <div class="keywords-container">
+                                                <div class="keyword-input-container">
+                                                    <input type="text" class="keyword-input with-border" id="Tags" placeholder="e.g. job title, responsibilites" ng-model="JobPost.TagLine" />
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-4">
+                                        <div class="submit-field">
+                                            <h5>Start Date</h5>
+                                            <input type="date" class="with-border" id="StartDate" ng-model="JobPost.Start_Date " >
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-4">
+                                        <div class="submit-field">
+                                            <h5>End Date</h5>
+                                            <input type="date" class="with-border" id="EndDate" placeholder="Job Title" ng-model="JobPost.End_Date">
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-12">
+                                        <div class="submit-field">
+                                            <h5>Job Description</h5>
+                                            <textarea cols="30" rows="5" class="with-border" id="Desc" ng-model="JobPost.Summary"></textarea>
+                                            
+                                        </div>
+                                    </div>
+                                    <button class="button" type="submit" ng-click="addJobPost()"
+                                            form="post-job-form" onclick="return jobPostVal();">
+                                        Add a Job <i class="icon-material-outline-arrow-right-alt"></i>
+                                    </button>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>                    
+                </form>
+               
+
+            </div>
+            <!-- Row / End -->
+           
+        </div>
+    </div>
+    <!-- Dashboard Content / End -->
+</div>
